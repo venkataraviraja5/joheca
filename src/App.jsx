@@ -1,6 +1,6 @@
 import './App.css';
 import { lazy, Suspense, useEffect } from 'react';
-import { BrowserRouter, Routes, Route, Outlet, useLocation } from 'react-router-dom';
+import { HashRouter, Routes, Route, Outlet, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import About from './pages/About';
@@ -46,7 +46,7 @@ const Layout = () => (
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
     <ScrollToTop />
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>
@@ -72,7 +72,7 @@ function App() {
           </Route>
         </Routes>
       </Suspense>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
