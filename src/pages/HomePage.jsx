@@ -512,7 +512,7 @@ const HomePage = () => {
                 animate="floating"
                 custom={15}
                 whileHover="hover"
-                src="/images/homepage-grid-1.jpg"
+                src="images/homepage-grid-1.jpg"
                 alt="Learning"
                 className="rounded-3xl shadow-2xl w-full object-cover h-48 md:h-64 border-4 border-white"
               />
