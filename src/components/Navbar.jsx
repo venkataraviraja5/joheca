@@ -33,7 +33,7 @@ export default function Navbar() {
             <a href="/international" className="hover:text-gray-300">
               International
             </a>
-            <a href="/app" className="hover:text-gray-300">
+            <a href="/mobile-app" className="hover:text-gray-300">
               App
             </a>
             <a href="/contact" className="hover:text-gray-300">
@@ -71,7 +71,7 @@ export default function Navbar() {
             <a href="/international" className="hover:text-gray-300">
               International
             </a>
-            <a href="/app" className="hover:text-gray-300">
+            <a href="/mobile-app" className="hover:text-gray-300">
               App
             </a>
             <a href="/contact" className="hover:text-gray-300">

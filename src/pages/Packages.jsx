@@ -93,24 +93,24 @@ export default function Pricing() {
   return (
     <section className="bg-gradient-to-br from-gray-50 to-white">
       <div 
-       className="relative text-center bg-cover bg-center bg-no-repeat overflow-hidden p-5"
-         style={{ backgroundImage: "url('/images/packages.jpg')" }}
+       className="relative text-center bg-cover bg-center bg-no-repeat overflow-hidden bg-[#0B3D91] p-5"
+        //  style={{ backgroundImage: "url('/images/packages.jpg')" }}
       >
 
         {/* Header */}
         <div 
         >
-          <h2 className="text-4xl font-bold mb-3 text-[#FFB800]">
+          <h2 className="text-4xl font-poppins mb-3 text-[#FFB800]">
             JOHECA Full Career Packages
           </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <p className="text-white max-w-2xl mx-auto font-inter">
             One-time investment for skills, confidence, career clarity and
             ₹5,00,000 job assurance.
           </p>
         </div>
 
         {/* Offer Timer */}
-        <div className="text-center mb-12 text-red-500 font-semibold">
+        <div className="text-center mb-12 text-red-500 font-inter">
           🔥 Limited Time Offer Ends In:
           <span className="ml-2">
             {timeLeft.hours}h {timeLeft.minutes}m {timeLeft.seconds}s
@@ -127,7 +127,7 @@ export default function Pricing() {
                 ${plan.popular ? "border-yellow-400" : "border-gray-200"}`}
             >
               {plan.popular && (
-                <span className="absolute -top-4 left-1/2 -translate-x-1/2 bg-yellow-400 px-4 py-1 rounded-full text-sm font-bold">
+                <span className="absolute -top-4 left-1/2 -translate-x-1/2 bg-yellow-400 px-4 py-1 rounded-full text-sm font-poppins">
                   Most Popular
                 </span>
               )}
@@ -136,17 +136,17 @@ export default function Pricing() {
                 {plan.icon}
               </div>
 
-              <h3 className="text-2xl font-semibold text-center mb-2">
+              <h3 className="text-2xl font-semibold text-center mb-2 font-poppins">
                 {plan.title}
               </h3>
 
-              <p className="text-4xl font-bold text-center mb-6">
+              <p className="text-4xl font-bold text-center mb-6 font-inter">
                 {plan.price}
               </p>
 
-              <ul className="space-y-3 mb-8 text-gray-700">
+              <ul className="space-y-3 mb-8 text-gray-700 font-inter">
                 {plan.features.map((feature, i) => (
-                  <li key={i} className="flex items-center gap-2">
+                  <li key={i} className="flex items-center gap-2 font-inter">
                     <FaCheckCircle className="text-green-500" />
                     {feature}
                   </li>
@@ -154,11 +154,11 @@ export default function Pricing() {
               </ul>
 
               <button
-                className={`w-full py-3 rounded-xl font-semibold mt-auto
+                className={`w-full py-3 rounded-xl font-semibold mt-auto font-inter
                   ${
                     plan.popular
                       ? "bg-yellow-400 hover:bg-yellow-300"
-                      : "bg-gray-100 hover:bg-gray-200"
+                      : "bg-gray-100 hover:bg-gray-200 "
                   }`}
               >
                 Enroll Now
@@ -168,7 +168,7 @@ export default function Pricing() {
         </div>
 
         {/* Why Choose JoHeCa */}
-        <div className="mb-20">
+        <div className="mb-20 font-inter">
           <h3 className="text-3xl font-bold text-center text-white mb-10">
             Why Choose JoHeCa?
           </h3>
