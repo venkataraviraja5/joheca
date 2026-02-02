@@ -110,7 +110,7 @@ const Services = () => {
     <div className="bg-slate-50 min-h-screen font-sans selection:bg-[#FFB800] selection:text-slate-900">
       
       {/* ================= HERO BANNER ================= */}
-      <section 
+      {/* <section 
         className="relative h-[70vh] md:h-[85vh] flex items-center justify-center overflow-hidden bg-slate-950"
       >
         <motion.div 
@@ -144,7 +144,7 @@ const Services = () => {
             </p>
           </motion.div>
         </div>
-      </section>
+      </section> */}
 
       {/* ================= NAVIGATION TABS ================= */}
       <div className="sticky top-0 z-50 py-6 bg-slate-50/80 backdrop-blur-md">
@@ -171,7 +171,7 @@ const Services = () => {
       </div>
 
       {/* ================= SERVICE DETAIL CONTENT ================= */}
-      <section className="max-w-7xl mx-auto px-6 py-16 md:py-24">
+      <section className="max-w-7xl mx-auto px-6 py-5">
         <AnimatePresence mode="wait">
           <motion.div
             key={active.id}

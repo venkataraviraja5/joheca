@@ -594,9 +594,9 @@ const HomePage = () => {
           <span className="text-white/20 font-black text-2xl">01</span>
         </div>
         <div>
-          <h3 className="text-white font-bold text-sm md:text-lg mb-2">Knowledge</h3>
+          <h3 className="text-white font-bold text-sm md:text-lg mb-2">Job Assurance</h3>
           <Link
-            to="/knowledge"
+            to="/job-assurance"
             className="inline-flex items-center gap-1.5 px-3 py-1 bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 rounded-full text-white text-[9px] md:text-[11px] font-bold uppercase tracking-wider transition-all"
           >
             Read More <ArrowRight size={12} className="text-amber-400" />

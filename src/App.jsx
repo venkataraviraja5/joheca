@@ -1,6 +1,6 @@
 import './App.css';
 import { lazy, Suspense, useEffect } from 'react';
-import { HashRouter, Routes, Route, Outlet, useLocation } from 'react-router-dom';
+import { HashRouter, Routes, Route, Outlet, useLocation, BrowserRouter } from 'react-router-dom';
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import About from './pages/About';
@@ -8,7 +8,7 @@ import Services from './pages/Services';
 import Contact from './pages/Contact';
 import Pricing from './pages/Packages';
 import International from './pages/International';
-import KnowledgePage from './pages/Knowledge';
+// import KnowledgePage from './pages/Knowledge';
 import PurposePage from './pages/Purpose';
 import GlobalVisionPage from './pages/GlobalVision.Jsx';
 import EthicalGrowthPage from './pages/Growth';
@@ -20,6 +20,7 @@ import SkillCoursesPage from './pages/SkillCourses';
 import AITrainingPage from './pages/AiTraining';
 import CareerMentorshipPage from './pages/Mentoraship';
 import MobileAppPage from './pages/MobileApp';
+import JobAssurancePage from './pages/JobAssurance';
 
 const Homepage = lazy(() => import("./pages/HomePage"));
 
@@ -46,7 +47,7 @@ const Layout = () => (
 
 function App() {
   return (
-    <HashRouter>
+    <BrowserRouter>
     <ScrollToTop />
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>
@@ -57,7 +58,7 @@ function App() {
             <Route path='/contact' element={<Contact />} />
             <Route path='/packages' element={<Pricing />} />
             <Route path='/international' element={<International/>} />
-            <Route path='/knowledge' element={<KnowledgePage/>} />
+            {/* <Route path='/knowledge' element={<KnowledgePage/>} /> */}
             <Route path='/purpose' element={<PurposePage/>} />
             <Route path='/global-vision' element={<GlobalVisionPage/>} />
             <Route path='/ethical-growth' element={<EthicalGrowthPage/>} />
@@ -69,10 +70,11 @@ function App() {
             <Route path='/ai-training' element={<AITrainingPage/>} />
             <Route path='/mentorship' element={<CareerMentorshipPage/>} />
             <Route path='/mobile-app' element={<MobileAppPage/>} />
+            <Route path='/Job-assurance' element={<JobAssurancePage/>} />
           </Route>
         </Routes>
       </Suspense>
-    </HashRouter>
+    </BrowserRouter>
   );
 }
 
