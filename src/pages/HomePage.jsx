@@ -189,7 +189,7 @@ const imageVariants = {
 const HomePage = () => {
   const duplicatedApprovals = [...approvals, ...approvals];
   return (
-    <div className="min-h-screen bg-white font-sans text-slate-900 overflow-x-hidden">
+    <div className="bg-white font-sans text-slate-900">
       {/* --- Hero Section --- */}
       <section className="relative pt-32 pb-20 px-6 md:px-16 bg-gradient-to-br from-[#e8f1f8] via-[#fdfbf7] to-white">
         <div className="absolute top-0 right-0 w-1/2 h-full opacity-20 pointer-events-none bg-[radial-gradient(circle_at_top_right,_#3b82f6_0%,_transparent_70%)]" />
