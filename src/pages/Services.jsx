@@ -15,6 +15,7 @@ import {
   FaRocket,
   FaChartLine,
 } from "react-icons/fa";
+import { Smartphone, Globe, Monitor, ShieldCheck, Database, Award } from 'lucide-react';
 
 const services = [
   {
@@ -151,7 +152,8 @@ const Services = () => {
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex gap-4 overflow-x-auto pb-2 no-scrollbar justify-start md:justify-center">
             {services.map((service) => (
-              <button
+              <a
+                href="#content-section"
                 key={service.id}
                 onClick={() => setActive(service)}
                 className={`group flex items-center gap-3 px-6 py-3 rounded-2xl text-sm font-bold transition-all duration-300 whitespace-nowrap
@@ -164,14 +166,14 @@ const Services = () => {
                   {service.icon}
                 </span>
                 {service.title}
-              </button>
+              </a>
             ))}
           </div>
         </div>
       </div>
 
       {/* ================= SERVICE DETAIL CONTENT ================= */}
-      <section className="max-w-7xl mx-auto px-6 py-5">
+      <section className="max-w-7xl mx-auto px-6 py-5" id="content-section">
         <AnimatePresence mode="wait">
           <motion.div
             key={active.id}
@@ -226,6 +228,76 @@ const Services = () => {
           </motion.div>
         </AnimatePresence>
       </section>
+
+      <section className="py-24 bg-white overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="text-center mb-16 space-y-4">
+          <h2 className="text-4xl md:text-6xl font-black tracking-tighter text-neutral-900">
+            THE TECH <span className="text-indigo-600">ENGINE</span>
+          </h2>
+          <p className="text-neutral-400 font-bold uppercase tracking-[0.3em] text-xs">Proprietary AI-Driven Learning Ecosystem</p>
+        </div>
+
+        <div className="grid lg:grid-cols-2 gap-8">
+          
+          {/* JOHECA APP */}
+          <div className="relative p-10 rounded-[3rem] bg-slate-50 border border-slate-100 group hover:shadow-2xl hover:shadow-indigo-100 transition-all duration-500">
+            <div className="flex items-center gap-4 mb-8">
+              <div className="w-14 h-14 bg-indigo-600 rounded-2xl flex items-center justify-center text-white shadow-lg">
+                <Smartphone size={28} />
+              </div>
+              <div>
+                <h3 className="text-2xl font-black text-neutral-900 leading-none">JOHECA APP</h3>
+                <p className="text-xs font-bold text-indigo-600 uppercase tracking-widest mt-1">AI-Driven Learning</p>
+              </div>
+            </div>
+
+            <ul className="grid sm:grid-cols-2 gap-6">
+              {[
+                { label: "Video Classes & Assessments", icon: <Monitor size={16} /> },
+                { label: "AI Chat Bot Support", icon: <Database size={16} /> },
+                { label: "INTERVIEW Training", icon: <Award size={16} /> },
+                { label: "Career Tracking Dashboard", icon: <ShieldCheck size={16} /> }
+              ].map((feature, i) => (
+                <li key={i} className="flex items-center gap-3 text-neutral-600 font-bold text-sm bg-white p-4 rounded-2xl border border-slate-100">
+                  <span className="text-indigo-500">{feature.icon}</span>
+                  {feature.label}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* JOHECA PORTAL */}
+          <div className="relative p-10 rounded-[3rem] bg-neutral-900 border border-neutral-800 group hover:shadow-2xl hover:shadow-indigo-100/10 transition-all duration-500">
+            <div className="flex items-center gap-4 mb-8">
+              <div className="w-14 h-14 bg-emerald-500 rounded-2xl flex items-center justify-center text-white shadow-lg">
+                <Globe size={28} />
+              </div>
+              <div>
+                <h3 className="text-2xl font-black text-white leading-none">JOHECA PORTAL</h3>
+                <p className="text-xs font-bold text-emerald-500 uppercase tracking-widest mt-1">joheca.in</p>
+              </div>
+            </div>
+
+            <ul className="grid sm:grid-cols-2 gap-6">
+              {[
+                "Partner College Dashboard",
+                "Admission Tracking",
+                "Student Referral Management",
+                "Digital Classroom Integration",
+                "Scholarships Management"
+              ].map((item, i) => (
+                <li key={i} className="flex items-center gap-3 text-neutral-400 font-bold text-sm bg-white/5 p-4 rounded-2xl border border-white/5 group-hover:border-emerald-500/30 transition-colors">
+                  <div className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
 
       {/* ================= BELIEF SECTION (BENTO GRID) ================= */}
       <section className="bg-white py-24 md:py-32">
