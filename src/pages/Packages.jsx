@@ -111,7 +111,7 @@ export default function Pricing() {
 
         {/* Offer Timer */}
         <div className="text-center mb-12 text-red-500 font-inter">
-          🔥 Limited Time Offer Ends In:
+          🔥 Only 500 seats left:
           <span className="ml-2">
             {timeLeft.hours}h {timeLeft.minutes}m {timeLeft.seconds}s
           </span>
