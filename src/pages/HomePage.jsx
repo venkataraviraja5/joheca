@@ -13,6 +13,8 @@ import {
   Sparkles,
   ArrowRight,
   ArrowUpRight,
+  Wrench,
+  Bot,
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import Testimonials from "../components/Testimonials";
@@ -26,6 +28,25 @@ import {
   Building2,
   HeartHandshake,
 } from "lucide-react";
+import FAQSection from "../components/Faq";
+
+const features = [
+    {
+      title: "Replace 10-15 Tools",
+      description: "Industry-Oriented Curriculum, Real-World Exposure, and Mentors — all in one integrated platform.",
+      icon: <Wrench className="w-10 h-10 text-blue-400" />,
+    },
+    {
+      title: "AI-Powered Automation",
+      description: "AI for Every Student, AI Brain, and AI Inbox — automate learning and support 24/7.",
+      icon: <Bot className="w-10 h-10 text-slate-300" />,
+    },
+    {
+      title: "Made for Excellence",
+      description: "Designed for local growth, featuring dedicated Indian support teams and tailored invoicing.",
+      icon: <span className="text-4xl">🇮🇳</span>, // Using emoji to match the image style
+    },
+  ];
 
 const approvals = [
   "Skill India",
@@ -211,7 +232,7 @@ const HomePage = () => {
             <div className="relative">
               <div className="w-64 h-64 md:w-80 md:h-80 rounded-full bg-blue-100 overflow-hidden border-8 border-white shadow-2xl">
                 <img
-                  src="/api/placeholder/400/400"
+                  src="/images/homebanner_image.png"
                   alt="Krishna Wisdom"
                   className="object-cover w-full h-full"
                 />
@@ -825,36 +846,44 @@ const HomePage = () => {
       </section> */}
 
       {/* --- Why Choose Section --- */}
-      <section className="py-16 px-6 md:px-16 bg-blue-50/50">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12">
-          <div className="md:w-1/2">
-            <h2 className="text-3xl font-bold text-blue-900 mb-8">
-              Why Choose JoHeCa?
-            </h2>
-            <ul className="space-y-4">
-              {[
-                "Industry-Oriented Curriculum",
-                "AI for Every Student",
-                "Real-World Exposure",
-                "Mentors, Not Just Teachers",
-              ].map((text, i) => (
-                <li
-                  key={i}
-                  className="flex items-center gap-3 text-blue-800 font-medium border-b border-blue-100 pb-2"
-                >
-                  <CheckCircle2 size={18} className="text-amber-500" /> {text}
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="md:w-1/2">
-            <img
-              src="/api/placeholder/600/400"
-              alt="Students collaborating"
-              className="rounded-2xl shadow-2xl"
-            />
-          </div>
+    <section className="py-20 px-6 bg-[#020617] text-white">
+      <div className="max-w-4xl mx-auto">
+        {/* Header */}
+        <div className="flex items-center justify-center gap-3 mb-12">
+          <span className="text-3xl">💡</span>
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
+            Why Choose JoHeCa?
+          </h2>
         </div>
+
+        {/* Cards Container */}
+        <div className="flex flex-col gap-6">
+          {features.map((feature, index) => (
+            <motion.div
+              key={index}
+              whileHover={{ scale: 1.02 }}
+              className="bg-[#0f172a] border border-slate-800 rounded-2xl p-8 text-center flex flex-col items-center shadow-xl transition-all"
+            >
+              {/* Icon Container */}
+              <div className="mb-6 flex justify-center items-center">
+                {feature.icon}
+              </div>
+
+              {/* Text Content */}
+              <h3 className="text-2xl font-bold mb-4">
+                {feature.title}
+              </h3>
+              <p className="text-slate-400 text-lg leading-relaxed max-w-xl">
+                {feature.description}
+              </p>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+      <section>
+        <FAQSection />
       </section>
 
       <section>

@@ -7,8 +7,7 @@ export default function Navbar() {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
-    <nav className="bg-[#0B3D91] text-white font-poppins"
-    >
+    <nav className="bg-[#0B3D91] text-white font-poppins sticky top-0 z-50 shadow-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
           {/* Logo / Brand */}
@@ -18,25 +17,25 @@ export default function Navbar() {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex space-x-8">
-            <a href="/" className="hover:text-gray-300">
+            <a href="/" className="hover:text-gray-300 transition-colors duration-200">
               Home
             </a>
-            <a href="/about" className="hover:text-gray-300">
+            <a href="/about" className="hover:text-gray-300 transition-colors duration-200">
               About
             </a>
-            <a href="/services" className="hover:text-gray-300">
+            <a href="/services" className="hover:text-gray-300 transition-colors duration-200">
               Services
             </a>
-            <a href="/packages" className="hover:text-gray-300">
+            <a href="/packages" className="hover:text-gray-300 transition-colors duration-200">
               Packages
             </a>
-            <a href="/international" className="hover:text-gray-300">
+            <a href="/international" className="hover:text-gray-300 transition-colors duration-200">
               International
             </a>
-            <a href="/mobile-app" className="hover:text-gray-300">
+            <a href="/mobile-app" className="hover:text-gray-300 transition-colors duration-200">
               App
             </a>
-            <a href="/contact" className="hover:text-gray-300">
+            <a href="/contact" className="hover:text-gray-300 transition-colors duration-200">
               Contact
             </a>
           </div>
@@ -55,28 +54,28 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden bg-blue-800 px-4 pt-2 pb-4 space-y-2 font-sans flex flex-col gap-2">
-          <a href="/" className="hover:text-gray-300">
-              Home
-            </a>
-            <a href="/about" className="hover:text-gray-300">
-              About
-            </a>
-            <a href="/services" className="hover:text-gray-300">
-              Services
-            </a>
-            <a href="/packages" className="hover:text-gray-300">
-              Packages
-            </a>
-            <a href="/international" className="hover:text-gray-300">
-              International
-            </a>
-            <a href="/mobile-app" className="hover:text-gray-300">
-              App
-            </a>
-            <a href="/contact" className="hover:text-gray-300">
-              Contact
-            </a>
+        <div className="md:hidden bg-blue-800 px-4 pt-2 pb-4 space-y-2 font-sans flex flex-col">
+          <a href="/" className="hover:text-gray-300 transition-colors duration-200">
+            Home
+          </a>
+          <a href="/about" className="hover:text-gray-300 transition-colors duration-200">
+            About
+          </a>
+          <a href="/services" className="hover:text-gray-300 transition-colors duration-200">
+            Services
+          </a>
+          <a href="/packages" className="hover:text-gray-300 transition-colors duration-200">
+            Packages
+          </a>
+          <a href="/international" className="hover:text-gray-300 transition-colors duration-200">
+            International
+          </a>
+          <a href="/mobile-app" className="hover:text-gray-300 transition-colors duration-200">
+            App
+          </a>
+          <a href="/contact" className="hover:text-gray-300 transition-colors duration-200">
+            Contact
+          </a>
         </div>
       )}
     </nav>

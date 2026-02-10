@@ -2,8 +2,8 @@
 import React from "react";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
-import { HiArrowRight } from "react-icons/hi";
-import { FaQuoteLeft, FaBullseye, FaRocket, FaGlobeAmericas, FaShieldAlt, FaCheckCircle } from "react-icons/fa";
+import { HiArrowRight, HiBadgeCheck } from "react-icons/hi";
+import { FaQuoteLeft, FaBullseye, FaRocket, FaGlobeAmericas, FaShieldAlt, FaCheckCircle, FaMapMarkedAlt, FaUserFriends, FaGraduationCap, FaRupeeSign, FaUserShield, FaHeartbeat } from "react-icons/fa";
 
 const About = () => {
   const fadeInUp = {
@@ -15,128 +15,243 @@ const About = () => {
     },
   };
 
+  const coreReasons = [
+    { 
+      title: "No Career Roadmap", 
+      desc: "Most students are lost when choosing streams with little awareness of future opportunities.",
+      icon: <FaMapMarkedAlt className="text-amber-500" /> 
+    },
+    { 
+      title: "Absence of Mentorship", 
+      desc: "Students go years without a true mentor until it's too late—usually after college ends.",
+      icon: <FaUserFriends className="text-amber-500" /> 
+    },
+    { 
+      title: "Low Employability", 
+      desc: "Degree holders struggle to get jobs due to outdated curricula and lack of practical skills.",
+      icon: <FaGraduationCap className="text-amber-500" /> 
+    },
+    { 
+      title: "Financial Barriers", 
+      desc: "Many talented students drop out due to inability to afford higher education.",
+      icon: <FaRupeeSign className="text-amber-500" /> 
+    },
+    { 
+      title: "Parental Anxiety", 
+      desc: "Parents invest heavily but have no real-time insight into their child's progress.",
+      icon: <FaUserShield className="text-amber-500" /> 
+    },
+    { 
+      title: "No Safety Net", 
+      desc: "There's no job guarantee, health coverage, or fallback plan if things don't work out.",
+      icon: <FaHeartbeat className="text-amber-500" /> 
+    }
+  ];
+
+  const johecaAnswers = [
+    "A 7-year guided journey from 10th to final year",
+    "AI + human mentorship for personalized growth",
+    "Free B.Tech for deserving students",
+    "100% Job Assurance on legal bond paper + ₹5 lakh insurance",
+    "7-8 years of health insurance",
+    "Support for global education (admissions, visas, scholarships)"
+  ];
+
+  const studentNeeds = [
+    "A Mentor – Guidance at every step",
+    "A Map – A clear path to success",
+    "A Plan – Structured goals and milestones",
+    "A Skill – Practical, career-ready abilities",
+    "A Job – Assurance of employability",
+    "Peace of Mind for the Family – Safety, support, and transparency"
+  ];
+
   const containerPadding = "max-w-7xl mx-auto px-6 md:px-12 py-16 md:py-24";
 
   return (
     <div className="w-full bg-[#fcfcfc] overflow-hidden">
       
       {/* ================= HERO: FOUNDER'S MESSAGE ================= */}
-      <section className="relative w-full min-h-screen flex items-center bg-slate-900 overflow-hidden">
-        {/* Background Image with sophisticated parallax-like feel */}
-        <div className="absolute inset-0 opacity-40">
-          <img 
-            src="/images/founder-banner.jpg" 
-            alt="Founder Background" 
-            className="w-full h-full object-cover scale-110"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-900/80 to-transparent"></div>
-        </div>
+     <section className="relative w-full min-h-screen flex items-center bg-[#020617] overflow-hidden">
+      {/* Background Glows */}
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+        <div className="absolute top-[-10%] right-[-10%] w-[40%] h-[40%] bg-blue-600/10 blur-[120px] rounded-full"></div>
+        <div className="absolute bottom-[-10%] left-[-10%] w-[40%] h-[40%] bg-amber-500/10 blur-[120px] rounded-full"></div>
+      </div>
 
-        <div className={`${containerPadding} relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center`}>
+      <div className={`${containerPadding} relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center`}>
+        
+        {/* Left Side: Message Content */}
+        <motion.div 
+          className="lg:col-span-7 space-y-8"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeInUp}
+        >
+          <div className="space-y-4">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-500 font-bold text-[10px] uppercase tracking-[0.2em]">
+              17. Founder's Story & Vision
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold text-white font-poppins leading-tight">
+              A Promise to the <span className="text-amber-500">Next Generation</span>
+            </h2>
+          </div>
+          
+          <div className="relative">
+            <FaQuoteLeft className="absolute -top-6 -left-4 text-amber-500/20 text-7xl" />
+            <div className="relative space-y-6 text-slate-300 text-base md:text-lg leading-relaxed font-inter">
+              <p className="italic text-slate-200">
+                "As a 90s kid, I navigated life without direction, mentorship, or clarity. I know the confusion and fear of an uncertain future. JoHeCa was born to change that—to provide students with guidance, skills, and opportunities so they can step into the world with confidence."
+              </p>
+              
+              <div className="pt-6 border-t border-slate-800/50">
+                <p className="text-white font-semibold mb-4 text-xl">Every student deserves:</p>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-y-3 gap-x-6">
+                  {studentNeeds.map((item, i) => (
+                    <div key={i} className="flex items-center gap-3 text-sm text-slate-400">
+                      <FaCheckCircle className="text-amber-500 shrink-0" />
+                      {item}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div className="pt-6 border-l-4 border-amber-500 pl-6">
+            <p className="text-white font-bold text-lg tracking-wide uppercase">JoHeCa stands for:</p>
+            <p className="text-amber-500 text-lg italic font-medium">"Barosa for Every Student. Peace for Every Parent."</p>
+          </div>
+        </motion.div>
+
+        {/* Right Side: Founder Image */}
+        <motion.div 
+          className="lg:col-span-5"
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1 }}
+        >
+          <div className="relative group">
+            {/* Decorative Background Box */}
+            <div className="absolute -inset-4 border border-slate-800 rounded-3xl -translate-x-2 -translate-y-2 group-hover:border-amber-500/30 transition-colors duration-500"></div>
+            
+            <img
+              src="/images/founder.jpg" 
+              alt="Founder"
+              className="relative w-full aspect-[4/5] object-cover rounded-2xl shadow-2xl border border-white/5 transition-all duration-500"
+            />
+
+            {/* Vision Equation Overlay */}
+            <motion.div 
+              initial={{ y: 20, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.6 }}
+              className="absolute -bottom-8 -left-8 md:-left-12 bg-slate-900/95 backdrop-blur-xl p-6 rounded-2xl border border-slate-700 shadow-2xl max-w-[320px]"
+            >
+              <p className="text-amber-500 font-bold text-xs uppercase tracking-widest mb-3">Our Vision</p>
+              <div className="text-slate-200 text-xs font-medium leading-relaxed space-y-1">
+                <p>Education + Employment + Insurance + International Opportunity</p>
+                <p className="text-amber-500 text-center font-bold">=</p>
+                <p className="text-white text-sm font-bold text-center italic">"Life Security for Every Student."</p>
+              </div>
+            </motion.div>
+          </div>
+        </motion.div>
+
+      </div>
+    </section>
+
+      {/* ================= WHY JOHECA: THE AWAKENING ================= */}
+      <section className="relative bg-[#020617] overflow-hidden">
+      <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
+        <div className="absolute top-1/4 -left-20 w-96 h-96 bg-blue-600/10 blur-[120px] rounded-full"></div>
+      </div>
+
+      <div className={`${containerPadding} relative z-10`}>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+          
+          {/* LEFT: CORE REASONS (THE PROBLEMS) */}
           <motion.div 
-            className="lg:col-span-7 space-y-6"
+            className="lg:col-span-7 space-y-10"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
             variants={fadeInUp}
           >
-            <div className="inline-block px-4 py-1 rounded-full bg-[#FFB800] text-slate-900 font-bold text-xs uppercase tracking-widest mb-4">
-              Direct from the Heart
-            </div>
-            <h1 className="text-4xl md:text-6xl font-bold text-white font-poppins leading-tight">
-              Founder’s <span className="text-[#FFB800]">Message</span>
-            </h1>
-            
-            <div className="relative">
-              <FaQuoteLeft className="absolute -top-4 -left-8 text-white/10 text-6xl" />
-              <p className="text-slate-200 text-sm md:text-lg leading-relaxed font-inter italic border-l-4 border-[#FFB800] pl-6 whitespace-pre-line">
-                {`I grew up in the 90s — a generation filled with dreams but no direction. We chose engineering because we didn’t know our choices. That pain created JoHeCa. 
-
-                JoHeCa is a promise that the confusion of the 90s will never repeat. We want every student to walk a path that matches their passion, potential, and purpose.`}
+            <div className="space-y-4">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-500/10 border border-red-500/20 text-red-500 font-bold text-[10px] uppercase tracking-[0.2em]">
+                The Systemic Problem
+              </div>
+              <h3 className="text-4xl md:text-5xl font-bold text-white font-poppins leading-tight">
+                Why <span className="text-amber-500">JOHECA</span> Was Created
+              </h3>
+              <p className="text-slate-400 text-lg leading-relaxed max-w-2xl">
+                The founder, reflecting on his own journey as a "90s kid," experienced the confusion and fear of navigating education without direction. JOHECA was created to ensure no student faces that alone.
               </p>
             </div>
-            
-            <div className="pt-4">
-              <p className="text-white font-bold text-xl">— Founder, JoHeCa</p>
-              <p className="text-[#FFB800] text-sm tracking-widest uppercase">Empowering the Next Gen</p>
-            </div>
-          </motion.div>
 
-          <motion.div 
-            className="lg:col-span-5 hidden lg:block"
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1 }}
-          >
-            <div className="relative group">
-              <div className="absolute -inset-4 bg-[#FFB800]/20 rounded-2xl blur-xl group-hover:bg-[#FFB800]/30 transition duration-500"></div>
-              <img
-                src="/images/why-joheca.jpg"
-                alt="Why JoHeCa Was Created"
-                className="relative w-full aspect-[4/5] object-cover rounded-2xl shadow-2xl border border-white/10"
-              />
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* ================= WHY JOHECA: THE AWAKENING ================= */}
-      <section className="bg-white">
-        <div className={`${containerPadding}`}>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <motion.div 
-              className="order-2 lg:order-1 relative"
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeInUp}
-            >
-              <img
-                src="/images/why-created-johega.png"
-                alt="The Reality of Education"
-                className="w-full rounded-3xl shadow-[0_20px_50px_rgba(11,61,145,0.15)]"
-              />
-              {/* Floating Stat Card */}
-              <div className="absolute -bottom-6 -right-6 bg-[#FFB800] p-6 rounded-2xl shadow-xl hidden md:block">
-                <p className="text-slate-900 font-black text-4xl italic leading-none">250+</p>
-                <p className="text-slate-900 font-bold text-xs uppercase tracking-tighter">Career Paths Available</p>
-              </div>
-            </motion.div>
-
-            <motion.div 
-              className="order-1 lg:order-2 space-y-8"
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeInUp}
-            >
-              <div className="space-y-2">
-                <h2 className="text-[#0B3D91] font-black text-xs tracking-[0.3em] uppercase">The Catalyst</h2>
-                <h3 className="text-3xl md:text-5xl font-bold text-slate-900 font-poppins leading-tight">
-                  Why <span className="text-[#0B3D91]">JoHeCa</span> was Created
-                </h3>
-              </div>
-              
-              <p className="text-slate-600 text-lg leading-relaxed">
-                JoHeCa was created for one reason: To end the confusion that destroyed the dreams of millions. We bridge the gap between classroom theory and real-world employability.
-              </p>
-
-              <div className="grid grid-cols-1 gap-4">
-                {[
-                  "India has 250+ career paths… most know only 4–5.",
-                  "Colleges teach subjects… but not skills.",
-                  "Companies want skills… but graduates are unemployable.",
-                ].map((point, i) => (
-                  <div key={i} className="flex items-center gap-4 p-4 rounded-xl bg-slate-50 border-l-4 border-[#0B3D91] hover:bg-slate-100 transition-colors">
-                    <HiArrowRight className="text-[#FFB800] shrink-0" />
-                    <span className="text-slate-800 font-medium text-sm md:text-base">{point}</span>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {coreReasons.map((reason, i) => (
+                <div key={i} className="p-5 rounded-2xl bg-[#0f172a] border border-slate-800 hover:border-red-500/30 transition-all group">
+                  <div className="flex items-start gap-4">
+                    <div className="p-3 rounded-lg bg-slate-800 group-hover:bg-red-500/10 transition-colors">
+                      {reason.icon}
+                    </div>
+                    <div>
+                      <h4 className="text-white font-bold text-sm mb-1">{reason.title}</h4>
+                      <p className="text-slate-500 text-xs leading-relaxed">{reason.desc}</p>
+                    </div>
                   </div>
-                ))}
+                </div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* RIGHT: JOHECA'S ANSWER (THE SOLUTION) */}
+          <motion.div 
+            className="lg:col-span-5"
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <div className="bg-amber-500 rounded-[2.5rem] p-8 md:p-10 shadow-2xl relative overflow-hidden group">
+              {/* Decorative Circle */}
+              <div className="absolute -top-10 -right-10 w-40 h-40 bg-white/10 rounded-full transition-transform group-hover:scale-150 duration-700"></div>
+              
+              <div className="relative z-10 space-y-8">
+                <div>
+                  <h4 className="text-slate-900 font-black text-xs uppercase tracking-widest mb-2">The Solution</h4>
+                  <h3 className="text-3xl font-bold text-slate-950">JOHECA's Answer</h3>
+                </div>
+
+                <div className="space-y-5">
+                  {johecaAnswers.map((answer, i) => (
+                    <div key={i} className="flex items-start gap-4 group/item">
+                      <div className="mt-1 bg-slate-950 rounded-full p-1 group-hover/item:scale-110 transition-transform">
+                        <HiBadgeCheck className="text-amber-500 text-xl" />
+                      </div>
+                      <p className="text-slate-900 font-semibold text-sm md:text-base leading-snug">
+                        {answer}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="pt-4">
+                  <p className="text-slate-900/70 text-sm italic font-medium">
+                    "Built on Barosa (Meaning Trust) — to empower, protect, and guarantee a dignified future."
+                  </p>
+                </div>
               </div>
-            </motion.div>
-          </div>
+            </div>
+          </motion.div>
+
         </div>
-      </section>
+      </div>
+    </section>
 
       {/* ================= VISION & MISSION: THE CORE ================= */}
       <section className="bg-slate-50 relative py-12 md:py-24">
