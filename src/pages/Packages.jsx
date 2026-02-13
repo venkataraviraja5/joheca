@@ -116,36 +116,7 @@ export default function PricingPage() {
     <div className="bg-[#020617] text-white min-h-screen font-sans selection:bg-amber-500/30">
       {/* Dynamic Promo Banner */}
 
-      <div className="max-w-6xl mx-auto px-4 py-16">
-        {/* Why Choose Section (From Document 7) */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-20">
-          <div className="bg-slate-900/50 p-6 rounded-2xl border border-slate-800">
-            <FaLightbulb className="text-amber-500 mb-4 text-2xl" />
-            <h4 className="font-bold mb-2">Clear Career Roadmap</h4>
-            <p className="text-xs text-slate-400 leading-relaxed">
-              Most students are lost after 10th. We provide a 7-year guided
-              journey from 10th to graduation.
-            </p>
-          </div>
-          <div className="bg-slate-900/50 p-6 rounded-2xl border border-slate-800">
-            <FaUserTie className="text-blue-500 mb-4 text-2xl" />
-            <h4 className="font-bold mb-2">1:1 Mentorship</h4>
-            <p className="text-xs text-slate-400 leading-relaxed">
-              Avoid years without guidance. Get a personal mentor and structured
-              review system.
-            </p>
-          </div>
-          <div className="bg-slate-900/50 p-6 rounded-2xl border border-slate-800">
-            <FaShieldAlt className="text-green-500 mb-4 text-2xl" />
-            <h4 className="font-bold mb-2">Financial Safety Net</h4>
-            <p className="text-xs text-slate-400 leading-relaxed">
-              100% Job Assurance on legal bond paper + up to ₹5 Lakh Job
-              Insurance.
-            </p>
-          </div>
-        </div>
-
-        <header className="text-center mb-5">
+        <header className="text-center py-10 mb-5">
           <h1 className="text-4xl md:text-6xl font-black mb-6 bg-gradient-to-b from-white to-slate-500 bg-clip-text text-transparent italic">
             Pricing Plans
           </h1>
@@ -279,6 +250,35 @@ export default function PricingPage() {
             </p>
           </section>
         </section>
+
+        <div className="max-w-6xl mx-auto px-4 py-2">
+        {/* Why Choose Section (From Document 7) */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-20">
+          <div className="bg-slate-900/50 p-6 rounded-2xl border border-slate-800">
+            <FaLightbulb className="text-amber-500 mb-4 text-2xl" />
+            <h4 className="font-bold mb-2">Clear Career Roadmap</h4>
+            <p className="text-xs text-slate-400 leading-relaxed">
+              Most students are lost after 10th. We provide a 7-year guided
+              journey from 10th to graduation.
+            </p>
+          </div>
+          <div className="bg-slate-900/50 p-6 rounded-2xl border border-slate-800">
+            <FaUserTie className="text-blue-500 mb-4 text-2xl" />
+            <h4 className="font-bold mb-2">1:1 Mentorship</h4>
+            <p className="text-xs text-slate-400 leading-relaxed">
+              Avoid years without guidance. Get a personal mentor and structured
+              review system.
+            </p>
+          </div>
+          <div className="bg-slate-900/50 p-6 rounded-2xl border border-slate-800">
+            <FaShieldAlt className="text-green-500 mb-4 text-2xl" />
+            <h4 className="font-bold mb-2">Financial Safety Net</h4>
+            <p className="text-xs text-slate-400 leading-relaxed">
+              100% Job Assurance on legal bond paper + up to ₹5 Lakh Job
+              Insurance.
+            </p>
+          </div>
+        </div>
 
         {/* Footer CTA */}
         <div className="relative bg-gradient-to-br from-amber-500 to-orange-600 p-10 md:p-20 rounded-[3rem] text-center shadow-[0_20px_50px_rgba(245,158,11,0.3)]">

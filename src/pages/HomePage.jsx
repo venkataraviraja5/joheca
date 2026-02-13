@@ -29,38 +29,51 @@ import {
   HeartHandshake,
 } from "lucide-react";
 import FAQSection from "../components/Faq";
+import {
+  FaArrowRight,
+  FaFileDownload,
+  FaUserEdit,
+  FaUserLock,
+} from "react-icons/fa";
+import {
+  HiOutlineDocumentDownload,
+  HiOutlineLogin,
+  HiOutlineUserAdd,
+} from "react-icons/hi";
 
 const features = [
-    {
-      title: "Replace 10-15 Tools",
-      description: "Industry-Oriented Curriculum, Real-World Exposure, and Mentors — all in one integrated platform.",
-      icon: <Wrench className="w-10 h-10 text-blue-400" />,
-    },
-    {
-      title: "AI-Powered Automation",
-      description: "AI for Every Student, AI Brain, and AI Inbox — automate learning and support 24/7.",
-      icon: <Bot className="w-10 h-10 text-slate-300" />,
-    },
-    {
-      title: "Made for Excellence",
-      description: "Designed for local growth, featuring dedicated Indian support teams and tailored invoicing.",
-      icon: <span className="text-4xl">🇮🇳</span>, // Using emoji to match the image style
-    },
-  ];
-
+  {
+    title: "Replace 10-15 Tools",
+    description:
+      "Industry-Oriented Curriculum, Real-World Exposure, and Mentors — all in one integrated platform.",
+    icon: <Wrench className="w-10 h-10 text-blue-400" />,
+  },
+  {
+    title: "AI-Powered Automation",
+    description:
+      "AI for Every Student, AI Brain, and AI Inbox — automate learning and support 24/7.",
+    icon: <Bot className="w-10 h-10 text-slate-300" />,
+  },
+  {
+    title: "Made for Excellence",
+    description:
+      "Designed for local growth, featuring dedicated Indian support teams and tailored invoicing.",
+    icon: <span className="text-4xl">🇮🇳</span>, // Using emoji to match the image style
+  },
+];
 const approvals = [
-  "Skill India",
-  "Udyam Registration",
-  "MSME Registration",
-  "NEP - National Education Policy 2020",
-  "Startup India",
-  "State Education Hub",
-  "Legal University MoUs",
-  "PMKVY Approval",
-  "GST",
-  "PAN",
-  "TAN",
-  "Chartered Accountant",
+  { name: "Skill India", img: "/images/skill-india.png" },
+  { name: "Udyam Registration", img: "/images/udyam.png" },
+  { name: "MSME Registration", img: "/images/msme.jpeg" },
+  { name: "NEP - National Education Policy 2020", img: "/images/nep.jpg" },
+  { name: "Startup India", img: "/images/startup-india.png" },
+  { name: "State Education Hub", img: "/images/state-hub.png" },
+  { name: "Legal University MoUs", img: "/images/mou.png" },
+  { name: "PMKVY Approval", img: "/images/pmkvy.JPG" },
+  { name: "GST", img: "/images/gst.JPG" },
+  { name: "PAN", img: "/images/pan.png" },
+  { name: "TAN", img: "/images/tan.jpg" },
+  { name: "Chartered Accountant", img: "/images/ca.png" },
 ];
 
 const points = [
@@ -224,7 +237,7 @@ const HomePage = () => {
   return (
     <div className="bg-white font-sans text-slate-900">
       {/* --- Hero Section --- */}
-      <section className="relative pt-32 pb-20 px-6 md:px-16 bg-gradient-to-br from-[#e8f1f8] via-[#fdfbf7] to-white">
+      {/* <section className="relative pt-32 pb-20 px-6 md:px-16 bg-gradient-to-br from-[#e8f1f8] via-[#fdfbf7] to-white">
         <div className="absolute top-0 right-0 w-1/2 h-full opacity-20 pointer-events-none bg-[radial-gradient(circle_at_top_right,_#3b82f6_0%,_transparent_70%)]" />
 
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12">
@@ -279,7 +292,210 @@ const HomePage = () => {
             </div>
           </div>
         </div>
+      </section> */}
+
+      <section className="relative min-h-[600px] w-full overflow-hidden bg-white">
+        {/* Background Geometric Elements */}
+        <div className="absolute top-0 right-0 w-full h-full pointer-events-none">
+          {/* The slanted colored bars from the reference */}
+          <div className="absolute top-0 right-0 w-[60%] h-full bg-gradient-to-l from-gray-50 to-transparent skew-x-[-20deg] transform origin-top-right" />
+          <div className="absolute bottom-0 left-[40%] w-full h-12 bg-red-600 skew-y-[-2deg] transform" />
+          <div className="absolute bottom-12 left-[45%] w-full h-4 bg-yellow-400 skew-y-[-2deg] transform" />
+        </div>
+
+        <div className="max-w-7xl mx-auto px-6 md:px-16 pt-5 pb-20 relative z-10">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
+            {/* Left Content Area */}
+            <div className="lg:w-1/2 text-left">
+              {/* Logo and Excellence Badge */}
+              <div className="flex items-center gap-6 mb-8">
+                <img
+                  src="/logo.png"
+                  alt="JOHECA Logo"
+                  className="h-16 w-auto"
+                />
+                <div className="h-12 w-[1px] bg-gray-300" />
+                <div className="flex items-center gap-2">
+                  <span className="text-4xl font-bold text-red-600 italic">
+                    7+
+                  </span>
+                  <span className="text-xs font-bold leading-tight text-red-800 uppercase">
+                    Years of <br /> Career Guidance
+                  </span>
+                </div>
+              </div>
+
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-black leading-tight text-[#1a4b8c] mb-6">
+                Launch Your{" "}
+                <span className="relative inline-block text-white px-2 py-1 bg-red-600 rounded">
+                  Future
+                </span>{" "}
+                with
+                <br />
+                <span className="text-gray-900 italic">JOHECA Platform</span>
+              </h1>
+
+              <div className="inline-block bg-[#1a4b8c] text-white text-3xl md:text-5xl font-bold px-6 py-4 rounded-sm shadow-xl transform -rotate-1">
+                ADMISSIONS OPEN 2026-27
+              </div>
+
+              {/* Student Image Placeholder - matching the AI pose in screenshot */}
+              {/* <div className="mt-8 relative hidden md:block">
+               <img 
+                src="/images/homebanner_image.png" 
+                alt="Student Success" 
+                className="h-[400px] w-auto object-contain rounded-[50%]"
+               />
+            </div> */}
+            </div>
+
+            {/* Right Lead Form Area - Designed exactly like the blue box in screenshot */}
+            <div className="lg:w-[400px] w-full">
+              <div className="bg-[#1a4b8c] rounded-md shadow-2xl overflow-hidden">
+                <div className="bg-[#123666] py-4 px-6 border-b border-blue-800">
+                  <h3 className="text-white text-xl font-bold text-center">
+                    Admissions Open
+                  </h3>
+                </div>
+
+                <form className="p-6 space-y-4 bg-white">
+                  <input
+                    type="text"
+                    placeholder="Enter Name *"
+                    className="w-full border-2 border-gray-200 p-3 rounded focus:border-blue-500 outline-none text-sm"
+                  />
+                  <input
+                    type="email"
+                    placeholder="Enter Email Address *"
+                    className="w-full border-2 border-gray-200 p-3 rounded focus:border-blue-500 outline-none text-sm"
+                  />
+                  <div className="flex gap-2">
+                    <select className="border-2 border-gray-200 p-3 rounded text-sm w-24 bg-white">
+                      <option>+91</option>
+                    </select>
+                    <input
+                      type="tel"
+                      placeholder="Enter Mobile Number *"
+                      className="flex-1 border-2 border-gray-200 p-3 rounded focus:border-blue-500 outline-none text-sm"
+                    />
+                  </div>
+
+                  <div className="grid grid-cols-2 gap-2">
+                    <select className="border-2 border-gray-200 p-3 rounded text-sm bg-white">
+                      <option>Select State *</option>
+                    </select>
+                    <select className="border-2 border-gray-200 p-3 rounded text-sm bg-white">
+                      <option>Select City *</option>
+                    </select>
+                  </div>
+
+                  <select className="w-full border-2 border-gray-200 p-3 rounded text-sm bg-white">
+                    <option>Select Program Level *</option>
+                    <option>Silver Plan (₹25,000)</option>
+                    <option>Diamond Plan (₹40,000)</option>
+                    <option>Platinum Plan (₹55,000)</option>
+                  </select>
+
+                  <div className="flex items-start gap-2 pt-2">
+                    <input type="checkbox" className="mt-1" id="authorize" />
+                    <label
+                      htmlFor="authorize"
+                      className="text-[10px] leading-tight text-gray-500"
+                    >
+                      I authorize JOHECA to contact me with updates via Email,
+                      SMS, WhatsApp, and Call. This overrides any DND registry.
+                    </label>
+                  </div>
+
+                  <button className="w-full bg-red-600 hover:bg-red-700 text-white font-black py-4 rounded transition-all shadow-lg uppercase tracking-widest">
+                    Apply Now
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
+
+      <div className="w-full max-w-7xl mx-auto px-4 relative z-30">
+        {/* Main Action Container */}
+        <div className="bg-white rounded-2xl shadow-[0_20px_60px_-15px_rgba(0,0,0,0.15)] flex flex-col md:flex-row overflow-hidden border border-gray-100">
+          {/* Button 1: Apply Now (The Primary Call) */}
+          <motion.button
+            whileHover={{ backgroundColor: "#f9fafb" }}
+            className="flex-1 flex items-center gap-4 p-8 border-b md:border-b-0 md:border-r border-gray-100 transition-colors group"
+          >
+            <div className="w-14 h-14 rounded-full bg-amber-100 flex items-center justify-center text-amber-600 group-hover:bg-amber-500 group-hover:text-white transition-all duration-300">
+              <HiOutlineUserAdd size={28} />
+            </div>
+            <div className="text-left">
+              <h4 className="text-gray-900 font-black text-lg leading-tight uppercase tracking-tight">
+                Apply Now
+              </h4>
+              <p className="text-gray-500 text-xs font-medium">
+                Start your 7-year journey today
+              </p>
+            </div>
+          </motion.button>
+
+          {/* Button 2: Download Prospectus (Secondary Focus) */}
+          <motion.button
+            whileHover={{ backgroundColor: "#f9fafb" }}
+            className="flex-1 flex items-center gap-4 p-8 border-b md:border-b-0 md:border-r border-gray-100 transition-colors group"
+          >
+            <div className="w-14 h-14 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 group-hover:bg-[#1a4b8c] group-hover:text-white transition-all duration-300">
+              <HiOutlineDocumentDownload size={28} />
+            </div>
+            <div className="text-left">
+              <h4 className="text-gray-900 font-black text-lg leading-tight uppercase tracking-tight">
+                Download Prospectus
+              </h4>
+              <p className="text-gray-500 text-xs font-medium">
+                Get full curriculum & fee details
+              </p>
+            </div>
+          </motion.button>
+
+          {/* Button 3: Student Login (The Portal) */}
+          <motion.button
+            whileHover={{ backgroundColor: "#f9fafb" }}
+            className="flex-1 flex items-center gap-4 p-8 transition-colors group"
+          >
+            <div className="w-14 h-14 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 group-hover:bg-gray-900 group-hover:text-white transition-all duration-300">
+              <HiOutlineLogin size={28} />
+            </div>
+            <div className="text-left">
+              <h4 className="text-gray-900 font-black text-lg leading-tight uppercase tracking-tight">
+                Student Login
+              </h4>
+              <p className="text-gray-500 text-xs font-medium">
+                Access your learning dashboard
+              </p>
+            </div>
+          </motion.button>
+        </div>
+
+        {/* The Bottom Ticker - Sleek & High Contrast */}
+        <div className="mt-8 bg-[#1a4b8c] rounded-full py-3 px-8 flex items-center justify-between shadow-lg overflow-hidden relative">
+          {/* Glow effect */}
+          <div className="absolute top-0 left-0 w-32 h-full bg-gradient-to-r from-transparent via-white/10 to-transparent skew-x-12 -translate-x-full animate-[shimmer_3s_infinite]" />
+
+          <div className="flex items-center gap-3">
+            <span className="flex h-2 w-2 rounded-full bg-red-500 animate-ping" />
+            <span className="text-white text-[10px] md:text-xs font-black uppercase tracking-[0.2em]">
+              Admission Alert
+            </span>
+          </div>
+        </div>
+
+        <style jsx>{`
+          @keyframes shimmer {
+            100% {
+              transform: translateX(1000%);
+            }
+          }
+        `}</style>
+      </div>
 
       <section className="py-16 bg-white border-y border-neutral-100">
         <div className="max-w-6xl mx-auto px-6">
@@ -445,73 +661,78 @@ const HomePage = () => {
       </section>
 
       <section className="py-5 bg-[#fcfcfd] overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6">
-        
-        {/* Header - Minimalist & Sharp */}
-        <div className="mb-20 text-center relative">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2 className="text-[10px] md:text-xs font-black uppercase tracking-[0.5em] text-indigo-600/60 mb-4">
-              Trusted Excellence
-            </h2>
-            <h3 className="text-3xl md:text-5xl font-black text-slate-900 tracking-tighter">
-              Approvals
-            </h3>
-            <div className="mt-6 h-1 w-10 bg-gradient-to-r from-indigo-600 to-blue-400 mx-auto rounded-full" />
-          </motion.div>
-        </div>
-
-        {/* The Grid - Clean & Responsive */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
-          {approvals.map((item, idx) => (
+        <div className="max-w-7xl mx-auto px-6">
+          {/* Header - Minimalist & Sharp */}
+          <div className="mb-5 text-center relative">
             <motion.div
-              key={idx}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ 
-                delay: idx * 0.1, 
-                duration: 0.5,
-                type: "spring",
-                stiffness: 100 
-              }}
-              whileHover={{ y: -5 }}
-              className="relative group"
+              transition={{ duration: 0.6 }}
             >
-              {/* Card Background with Soft Glow on Hover */}
-              <div className="absolute inset-0 bg-indigo-500/5 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl" />
-              
-              <div className="relative flex flex-col items-center justify-center h-32 md:h-40 p-6 rounded-[2rem] bg-white border border-slate-100 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] group-hover:shadow-[0_20px_40px_-12px_rgba(79,70,229,0.12)] group-hover:border-indigo-100 transition-all duration-500">
-                
-                {/* Visual Accent - Small Dot */}
-                <div className="absolute top-4 right-4 w-1.5 h-1.5 rounded-full bg-slate-200 group-hover:bg-indigo-500 transition-colors" />
-                
-                <span className="text-xs md:text-sm font-bold text-slate-700 uppercase tracking-wider text-center group-hover:text-slate-900 transition-colors px-2">
-                  {item}
-                </span>
-
-                {/* Bottom Border Reveal */}
-                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-1 bg-indigo-600 rounded-full group-hover:w-1/3 transition-all duration-500" />
-              </div>
+              <h2 className="text-[10px] md:text-xs font-black uppercase tracking-[0.5em] text-indigo-600/60 mb-4">
+                Trusted Excellence
+              </h2>
+              <h3 className="text-3xl md:text-5xl font-black text-slate-900 tracking-tighter">
+                Approvals
+              </h3>
+              <div className="mt-6 h-1 w-10 bg-gradient-to-r from-indigo-600 to-blue-400 mx-auto rounded-full" />
             </motion.div>
-          ))}
-        </div>
+          </div>
 
-        {/* Subtle Footer Quote */}
-        <motion.p 
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ delay: 1 }}
-          className="mt-16 text-center text-slate-400 text-xs font-medium italic"
-        >
-          Ensuring global standards in every program we deliver.
-        </motion.p>
-      </div>
-    </section>
+          {/* The Grid - Clean & Responsive */}
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8">
+            {approvals.map((item, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.05, duration: 0.5 }}
+                whileHover={{ y: -8 }}
+                className="group relative"
+              >
+                {/* Soft Shadow Glow Effect */}
+                <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/10 to-transparent blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-[2.5rem]" />
+
+                <div className="relative flex flex-col items-center justify-between h-48 md:h-56 p-8 rounded-[2.5rem] bg-white border border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] group-hover:shadow-[0_20px_50px_rgba(79,70,229,0.15)] group-hover:border-indigo-100 transition-all duration-500 overflow-hidden">
+                  {/* Subtle Grid Background Pattern */}
+                  <div className="absolute inset-0 opacity-[0.03] group-hover:opacity-[0.07] transition-opacity pointer-events-none bg-[radial-gradient(#4f46e5_1px,transparent_1px)] [background-size:16px_16px]" />
+
+                  {/* Image/Logo Container */}
+                  <div className="relative z-10 w-full flex-1 flex items-center justify-center mb-4">
+                    <img
+                      src={item.img}
+                      alt={item.name}
+                      className="max-h-16 md:max-h-20 w-auto object-contain "
+                    />
+                  </div>
+
+                  {/* Text Area */}
+                  <div className="relative z-10 text-center">
+                    <p className="text-[10px] md:text-xs font-black text-slate-400 uppercase tracking-widest group-hover:text-indigo-600 transition-colors duration-300">
+                      {item.name}
+                    </p>
+                  </div>
+
+                  {/* Designer Accent: Floating Ring */}
+                  <div className="absolute -bottom-4 -left-4 w-12 h-12 border-2 border-indigo-50 rounded-full group-hover:scale-150 group-hover:border-indigo-100 transition-all duration-700" />
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Subtle Footer Quote */}
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ delay: 1 }}
+            className="mt-16 text-center text-slate-400 text-xs font-medium italic"
+          >
+            Ensuring global standards in every program we deliver.
+          </motion.p>
+        </div>
+      </section>
 
       <section className="min-h-screen bg-gray-50 flex items-center justify-center p-6 sm:p-12 font-sans overflow-hidden">
         <div className="max-w-7xl w-full grid lg:grid-cols-2 gap-16 items-center">
@@ -846,41 +1067,39 @@ const HomePage = () => {
       </section> */}
 
       {/* --- Why Choose Section --- */}
-    <section className="py-20 px-6 bg-[#020617] text-white">
-      <div className="max-w-4xl mx-auto">
-        {/* Header */}
-        <div className="flex items-center justify-center gap-3 mb-12">
-          <span className="text-3xl">💡</span>
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
-            Why Choose JoHeCa?
-          </h2>
-        </div>
+      <section className="py-20 px-6 bg-[#020617] text-white">
+        <div className="max-w-4xl mx-auto">
+          {/* Header */}
+          <div className="flex items-center justify-center gap-3 mb-12">
+            <span className="text-3xl">💡</span>
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
+              Why Choose JoHeCa?
+            </h2>
+          </div>
 
-        {/* Cards Container */}
-        <div className="flex flex-col gap-6">
-          {features.map((feature, index) => (
-            <motion.div
-              key={index}
-              whileHover={{ scale: 1.02 }}
-              className="bg-[#0f172a] border border-slate-800 rounded-2xl p-8 text-center flex flex-col items-center shadow-xl transition-all"
-            >
-              {/* Icon Container */}
-              <div className="mb-6 flex justify-center items-center">
-                {feature.icon}
-              </div>
+          {/* Cards Container */}
+          <div className="flex flex-col gap-6">
+            {features.map((feature, index) => (
+              <motion.div
+                key={index}
+                whileHover={{ scale: 1.02 }}
+                className="bg-[#0f172a] border border-slate-800 rounded-2xl p-8 text-center flex flex-col items-center shadow-xl transition-all"
+              >
+                {/* Icon Container */}
+                <div className="mb-6 flex justify-center items-center">
+                  {feature.icon}
+                </div>
 
-              {/* Text Content */}
-              <h3 className="text-2xl font-bold mb-4">
-                {feature.title}
-              </h3>
-              <p className="text-slate-400 text-lg leading-relaxed max-w-xl">
-                {feature.description}
-              </p>
-            </motion.div>
-          ))}
+                {/* Text Content */}
+                <h3 className="text-2xl font-bold mb-4">{feature.title}</h3>
+                <p className="text-slate-400 text-lg leading-relaxed max-w-xl">
+                  {feature.description}
+                </p>
+              </motion.div>
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
       <section>
         <FAQSection />
